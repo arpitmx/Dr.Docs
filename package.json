@@ -1,0 +1,25 @@
+{
+  "name": "dr.docs",
+  "version": "1.0.0",
+  "description": "Repo for Dr. Docs project for VSIT4.0 hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UtsavUpadhyay08/Dr.Docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UtsavUpadhyay08/Dr.Docs/issues"
+  },
+  "homepage": "https://github.com/UtsavUpadhyay08/Dr.Docs#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.6.3",
+    "nodemon": "^2.0.20",
+    "validator": "^13.7.0"
+  }
+}
