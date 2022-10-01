@@ -18,7 +18,7 @@ app.post('/patient', async (req, res) => {
 })
 
 app.post('/doctor', async (req, res) => {
-    console.log("doc hit");
+    // console.log("doc hit");
     const doctor = new Doctor(req.body)
     try {
         await doctor.save()
@@ -28,6 +28,9 @@ app.post('/doctor', async (req, res) => {
         console.log(e);
     }
 })
+app.get('/show_session/:patient_id/:session_id'){
+    
+}
 
 app.get('/', (req, res) => {
     res.send("Connected")
