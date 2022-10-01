@@ -28,20 +28,31 @@ const ptnschema=new mongoose.Schema({
             }
         }
     },
-    sessions:[
+    folder:[
         {
-            s_name:{
-                type: String,
-                required:true
+            downloadable:{
+                type: Boolean
             },
-            s_start_time:{
-                type:Number,
-                required:true
-            },
-            s_end_time:{
-                type:Number,
-                required:true
-            },
+            url:{
+                type:String
+            }
+        }
+    ]
+})
+    // sessions:[
+    //     {
+    //         s_name:{
+    //             type: String,
+    //             required:true
+    //         },
+    //         s_start_time:{
+    //             type:Number,
+    //             required:true
+    //         },
+    //         s_end_time:{
+    //             type:Number,
+    //             required:true
+    //         },
 
             // doc_id:{
             //     type:Number
@@ -54,16 +65,16 @@ const ptnschema=new mongoose.Schema({
             //         }
             //     }
             // ],
-            folder:[
-                {
-                    file_id:{
-                        type: Number
-                    }
-                }
-            ]
-        }
-    ]
-})
+            // folder:[
+            //     {
+            //         file_id:{
+            //             type: Number
+            //         }
+            //     }
+            // ]
+    //     }
+    // ]
+
 
 const User=mongoose.model('patient',ptnschema)
 module.exports=User
