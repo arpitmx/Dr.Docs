@@ -27,54 +27,44 @@ const ptnschema=new mongoose.Schema({
                 throw new Error("Invalid Email")
             }
         }
-    },
-    folder:[
+    },sessions:[
         {
-            downloadable:{
-                type: Boolean
+            s_name:{
+                type: String,
+                required:true
             },
-            url:{
-                type:String
-            }
+            s_start_time:{
+                type:Number,
+                required:true
+            },
+            s_end_time:{
+                type:Number,
+                required:true
+            },
+
+            doc_id:{
+                type:Number
+            },
+            doc_details:
+            {
+                doc_name:{
+                    type:String,
+                    required:true
+                }
+            },
+            folder:[
+                {
+                    downloadable:{
+                        type: Boolean
+                    },
+                    url:{
+                        type:String
+                    }
+                }
+            ]
         }
     ]
 })
-    // sessions:[
-    //     {
-    //         s_name:{
-    //             type: String,
-    //             required:true
-    //         },
-    //         s_start_time:{
-    //             type:Number,
-    //             required:true
-    //         },
-    //         s_end_time:{
-    //             type:Number,
-    //             required:true
-    //         },
-
-            // doc_id:{
-            //     type:Number
-            // }
-            // doc_details:[
-            //     {
-            //         doc_name:{
-            //             type:String,
-            //             required:true
-            //         }
-            //     }
-            // ],
-            // folder:[
-            //     {
-            //         file_id:{
-            //             type: Number
-            //         }
-            //     }
-            // ]
-    //     }
-    // ]
-
 
 const User=mongoose.model('patient',ptnschema)
 module.exports=User
