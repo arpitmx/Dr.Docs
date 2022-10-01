@@ -18,5 +18,16 @@ router.get('/doctor/:id',async(req,res)=>{
         console.log(e);
     }
 })
+router.post('/doctor', async (req, res) => {
+    // console.log("doc hit");
+    const doctor = new Doctor(req.body)
+    try {
+        await doctor.save()
+        res.status(201).send(doctor)
+    }
+    catch (e) {
+        console.log(e);
+    }
+})
 
 module.exports=router
