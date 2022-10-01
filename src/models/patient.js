@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 const validator=require('validator')
 
+
 const ptnschema=new mongoose.Schema({
     fname:{
         type: String,
@@ -29,8 +30,8 @@ const ptnschema=new mongoose.Schema({
     },
     sessions:[
         {
-            s_id:{
-                type: Number,
+            s_name:{
+                type: String,
                 required:true
             },
             s_start_time:{
@@ -41,14 +42,18 @@ const ptnschema=new mongoose.Schema({
                 type:Number,
                 required:true
             },
-            doc_details:[
-                {
-                    doc_name:{
-                        type:String,
-                        required:true
-                    }
-                }
-            ],
+
+            // doc_id:{
+            //     type:Number
+            // }
+            // doc_details:[
+            //     {
+            //         doc_name:{
+            //             type:String,
+            //             required:true
+            //         }
+            //     }
+            // ],
             folder:[
                 {
                     file_id:{

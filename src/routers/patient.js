@@ -16,8 +16,11 @@ router.post('/patient',async(req,res)=>{
 
 
 
+module.exports=router
+
 /*
 
+Giving data of a doctor
 Display data
 SignUp
 LogIn
