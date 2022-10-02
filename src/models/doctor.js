@@ -2,60 +2,35 @@ const mongoose=require('mongoose');
 const validator=require('validator')
 
 const doctschema=new mongoose.Schema({
-    // doc_id:{
-    //     type : String,
-    //     required: true,
-    //     trim :true
-    // },
-    // doc_name:{
-    //     type:String,
-    //     required:true,
-    //     trim:true
-    // },
-    // clinic_name:{
-    //     type:String,
-    //     required:true,
-    //     trim:true
-    // },
-    // specialization:[{
-    //     degree:{
-    //         type:String,
-    //         required:true,
-    //         trim:true
-    //     }
-    // }]
     doc_details:{
         doc_id:{
         type : String,
-        required: true,
         trim :true
     },
     doc_name:{
         type:String,
-        required:true,
         trim:true
     },
     clinic_name:{
         type:String,
-        required:true,
         trim:true
+    },
+    phoneNo :{
+        type:Number
     },
     specialization:[{
         degree:{
             type:String,
-            required:true,
             trim:true
         }
     }],
     session:[{
         patient_id:{
             type:String,
-            required:true,
             trim:true
         },
         session_id:{
             type:String,
-            required:true,
             trim:true
         }
 
@@ -64,4 +39,4 @@ const doctschema=new mongoose.Schema({
 })
 
 const Doctor=mongoose.model('doctor',doctschema)
-module.exports=Doctor
+module.exports={ Doctor, doctschema}

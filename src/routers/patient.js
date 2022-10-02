@@ -2,6 +2,7 @@ const express=require('express')
 const router = new express.Router()
 const Patient=require('../models/patient')
 
+//Patient Initials
 router.post('/patient',async(req,res)=>{
     const patient=new Patient(req.body)
     try{
@@ -13,6 +14,7 @@ router.post('/patient',async(req,res)=>{
     }
 })
 
+//Patient Initials get request
 router.get('/patient/:m_no',async(req,res)=>{
     try{
         const patient=await Patient.findOne({
