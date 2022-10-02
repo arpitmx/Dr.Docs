@@ -11,7 +11,7 @@ router.get('/doctor/qr/:id',async(req,res)=>{
 router.get('/doctor/:id',async(req,res)=>{
     try{
         const id=req.params.id
-        const doctor=await Doctors.findById(id)
+        const doctor=await Doctors.findOne({phoneNo:id})
         res.json(doctor);
     }
     catch(e){
@@ -19,7 +19,6 @@ router.get('/doctor/:id',async(req,res)=>{
     }
 })
 router.post('/doctor', async (req, res) => {
-    // console.log("doc hit");
     const doctor = new Doctor(req.body)
     try {
         await doctor.save()

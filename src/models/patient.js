@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const validator=require('validator')
-
+const {doctschema}=require('./doctor')
 
 const ptnschema=new mongoose.Schema({
     fname:{
@@ -27,31 +27,19 @@ const ptnschema=new mongoose.Schema({
                 throw new Error("Invalid Email")
             }
         }
-    },sessions:[
+    },
+    sessions:[
         {
             s_name:{
-                type: String,
-                required:true
+                type: String
             },
             s_start_time:{
-                type:Number,
-                required:true
-            },
-            s_end_time:{
-                type:Number,
-                required:true
-            },
-
-            doc_id:{
                 type:Number
             },
-            doc_details:
-            {
-                doc_name:{
-                    type:String,
-                    required:true
-                }
+            s_end_time:{
+                type:Number
             },
+            doc_detail : doctschema,
             folder:[
                 {
                     downloadable:{
